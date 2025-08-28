@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #fff;
+  --main-color: #0ef;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  transition: .3s;
+}
+
+.navbar a:hover,
+.navbar .active {
+  color: var(--main-color);
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h3 {
+  font-size: 2.8rem;
+}
+
+.home-content h1 {
+  font-size: 4.5rem;
+  margin: .5rem 0;
+}
+
+.home-content p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 1rem 1rem 1rem 0;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.social-media a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: var(--main-color);
+  color: #000;
+  border-radius: .5rem;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #00bcd4;
+}
+
+/* Image Styling */
+.home-img {
+  flex-shrink: 0;
+}
+
+.profile-img {
+  width: 250px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid rgb(0, 102, 128);
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(61, 133, 201, 0.6), 
+              0 0 40px rgba(0, 102, 255, 0.5), 
+              0 0 60px rgba(0, 0, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ef, 
+              0 0 60px #0ef, 
+              0 0 90px #0ef;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: var(--second-bg-color);
+}
+
+.about-img {
+  flex: 1 1 300px;
+}
+
+.about-content {
+  flex: 1 1 500px;
+}
+
+.about-content .heading {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content .heading span {
+  color: var(--main-color);
+}
+
+.about-content p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+/* Skills Section */
+.skills {
+  background: var(--bg-color);
+}
+
+.skills .heading {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.skills .heading span {
+  color: var(--main-color);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-between;
+}
+
+.technical-skills, .professional-skills {
+  flex: 1 1 45%;
+}
+
+.technical-skills h3, .professional-skills h3 {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+.skill span {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: .5rem;
+}
+
+.bar {
+  background: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: #0ef;
+  border-radius: 5px;
+}
+
+/* Circle Chart 
+.circles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+}
+
+.circle {
+  background: var(--second-bg-color);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+  color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px #0ef;
+}
+
+.circle span {
+  display: block;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.circle p {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive 
+@media (max-width: 768px) {
+  .home, .about, .skills-container {
+    flex-direction: column;
+  }
+
+  .home-img, .about-img {
+    margin-top: 2rem;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+  }
+}*/
+
+
+
+
+/* Circle Layout in Table */
+.circle-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.circle-table td {
+  padding: 1rem;
+}
+
+/* Circle Design & Animation */
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+  fill: none;
+  stroke-width: 10;
+  cx: 60;
+  cy: 60;
+  r: 50;
+}
+
+.bg {
+  stroke: #ddd;
+}
+
+.progress {
+  stroke: #0ef;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 2s ease;
+}
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 40px; /* extra bottom space for text */
+  text-align: center;
+}
+
+.circle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.circle p {
+  position: absolute;
+  bottom: -28px;   /* circle kinda fix avuthundi */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: var(--main-color);
+  white-space: nowrap; /* "Team Work" break kakunda single line lo vastundi */
+}
+
+.internship {
+  padding: 50px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.internship .heading {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.internship-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Intern card with hover effect */
+.intern-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 220px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.intern-card:hover {
+  transform: scale(1.05);
+  border: 2px solid #0ef;        /* neon blue border */
+  box-shadow: 0 0 25px #0ef;     /* glowing effect */
+  background: #1f242d;           /* dark bg on hover */
+  color: white;                  /* text visible */
+}
+
+.intern-card:hover h3 {
+  color: #0ef;                   /* heading neon effect */
+}
+
+.intern-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.intern-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+#internship {
+  background-color: #1f242d;
+  color: white;
+  padding: 30px 0;
+}
+
+.internship .heading span {
+  color: #0ef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Detailed Internship Page */
+.internship-page {
+  padding: 50px 10%;
+  background-color: #1f242d;
+  color: #fff;
+  line-height: 1.8;
+}
+
+.internship-page h1 {
+  text-align: center;
+  color: #0ef;
+  margin-bottom: 30px;
+}
+
+.internship-page h2 {
+  color: #0ef;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.internship-page ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.internship-page a {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #0ef;
+  color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.internship-page a:hover {
+  background-color: #00bcd4;
+}
+
+.internships-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between cards */
+  justify-content: center; /* center all cards */
+}
+
+.intern-card {
+  width: 250px; /* fixed width for all cards */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.intern-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.intern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* Contact Section */
+.contact {
+  padding: 80px 10%;
+  background: #0a0f1c;
+  text-align: center;
+}
+
+.contact .heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.contact .heading span {
+  color: #00e5ff;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Left Info */
+.contact-info {
+  flex: 1;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 15px 0;
+}
+
+.contact-info strong {
+  color: #00e5ff;
+}
+
+.contact-img {
+  margin-top: 20px;
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 229, 255, 0.4);
+}
+
+/* Right Form */
+.contact-form {
+  flex: 1;
+  background: #111827;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+  text-align: left;
+}
+
+.contact-form h3 {
+  color: #00e5ff;
+  margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #1f2937;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 30px;
+  background: #00e5ff;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #00bcd4;
+}
+/* Social media icons styling */
+.contact-info a i {
+  font-size: 28px;   /* bigger size (change 28px → 30px/35px as you like) */
+  margin-right: 15px;  /* space between icons */
+  color: #00ffee;   /* icon color */
+  transition: 0.3s;
+}
+
+.contact-info a i:hover {
+  color: #ff6600;   /* hover effect (optional) */
+  transform: scale(1.2); /* zoom effect */
+}
+
+.multiple-text {
+  color: #00ffee;   /* Highlight color */
+  font-weight: bold;
+}
+
